@@ -1,0 +1,100 @@
+.clients {
+  background-color: var(--light-background);
+  position: relative;
+  overflow: hidden;
+}
+
+.clients::before {
+  content: '';
+  position: absolute;
+  top: -10rem;
+  left: -10rem;
+  width: 30rem;
+  height: 30rem;
+  background-color: rgba(25, 96, 162, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.clients::after {
+  content: '';
+  position: absolute;
+  bottom: -15rem;
+  right: -15rem;
+  width: 40rem;
+  height: 40rem;
+  background-color: rgba(25, 96, 162, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.clients-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.client-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.client-logo {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.client-card:hover .client-logo img {
+  transform: scale(1.1);
+}
+
+.client-info h3 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.client-info span {
+  font-size: 1.4rem;
+  color: var(--light-text);
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .clients-container {
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-container {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+}
+
+@media (max-width: 450px) {
+  .clients-container {
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+}
