@@ -41,7 +41,7 @@ const Hero = () => {
             onClick={() => setIsClicked(!isClicked)}
           >
             <img
-              src="/logo.png"
+              src={`${process.env.PUBLIC_URL}/logo.png`}
               alt="Unique Solutions"
               className="hero-logo"
             />
