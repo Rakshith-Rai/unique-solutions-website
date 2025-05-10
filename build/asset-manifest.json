@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/unique-solutions-website/static/css/main.0adac910.css",
-    "main.js": "/unique-solutions-website/static/js/main.5c91d17c.js",
+    "main.js": "/unique-solutions-website/static/js/main.a34048dd.js",
     "static/js/453.b04a79c5.chunk.js": "/unique-solutions-website/static/js/453.b04a79c5.chunk.js",
     "static/media/home-bg-min.jpg": "/unique-solutions-website/static/media/home-bg-min.eb7d302e797146a8155c.jpg",
     "static/media/solar-min.jpg": "/unique-solutions-website/static/media/solar-min.809889c8ea89116e4702.jpg",
@@ -15,11 +15,11 @@
     "static/media/inverter.jpg": "/unique-solutions-website/static/media/inverter.f782621e8f9d9d155ece.jpg",
     "index.html": "/unique-solutions-website/index.html",
     "main.0adac910.css.map": "/unique-solutions-website/static/css/main.0adac910.css.map",
-    "main.5c91d17c.js.map": "/unique-solutions-website/static/js/main.5c91d17c.js.map",
+    "main.a34048dd.js.map": "/unique-solutions-website/static/js/main.a34048dd.js.map",
     "453.b04a79c5.chunk.js.map": "/unique-solutions-website/static/js/453.b04a79c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0adac910.css",
-    "static/js/main.5c91d17c.js"
+    "static/js/main.a34048dd.js"
   ]
 }
