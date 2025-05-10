@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/unique-solutions-website/static/css/main.0adac910.css",
-    "main.js": "/unique-solutions-website/static/js/main.a34048dd.js",
-    "static/js/453.b04a79c5.chunk.js": "/unique-solutions-website/static/js/453.b04a79c5.chunk.js",
-    "static/media/home-bg-min.jpg": "/unique-solutions-website/static/media/home-bg-min.eb7d302e797146a8155c.jpg",
-    "static/media/solar-min.jpg": "/unique-solutions-website/static/media/solar-min.809889c8ea89116e4702.jpg",
-    "static/media/about-im.jpg": "/unique-solutions-website/static/media/about-im.e6761b036ff640dc10b5.jpg",
-    "static/media/cctv-min.jpg": "/unique-solutions-website/static/media/cctv-min.0020be04096c5c316a86.jpg",
-    "static/media/vde-min.jpg": "/unique-solutions-website/static/media/vde-min.b6523665cf94d964a787.jpg",
-    "static/media/biometrics-min.jpg": "/unique-solutions-website/static/media/biometrics-min.57ee9a33e767eb6d6c37.jpg",
-    "static/media/intercom-min.jpg": "/unique-solutions-website/static/media/intercom-min.f6fe13c05b45841e4ba5.jpg",
-    "static/media/logo.png": "/unique-solutions-website/static/media/logo.2661e51eeb2b1d98d4a1.png",
-    "static/media/gate.jpg": "/unique-solutions-website/static/media/gate.558f0c26caa02e2205be.jpg",
-    "static/media/inverter.jpg": "/unique-solutions-website/static/media/inverter.f782621e8f9d9d155ece.jpg",
-    "index.html": "/unique-solutions-website/index.html",
-    "main.0adac910.css.map": "/unique-solutions-website/static/css/main.0adac910.css.map",
-    "main.a34048dd.js.map": "/unique-solutions-website/static/js/main.a34048dd.js.map",
-    "453.b04a79c5.chunk.js.map": "/unique-solutions-website/static/js/453.b04a79c5.chunk.js.map"
+    "main.css": "/static/css/main.0adac910.css",
+    "main.js": "/static/js/main.10dbf3e1.js",
+    "static/js/453.b04a79c5.chunk.js": "/static/js/453.b04a79c5.chunk.js",
+    "static/media/home-bg-min.jpg": "/static/media/home-bg-min.eb7d302e797146a8155c.jpg",
+    "static/media/solar-min.jpg": "/static/media/solar-min.809889c8ea89116e4702.jpg",
+    "static/media/about-im.jpg": "/static/media/about-im.e6761b036ff640dc10b5.jpg",
+    "static/media/cctv-min.jpg": "/static/media/cctv-min.0020be04096c5c316a86.jpg",
+    "static/media/vde-min.jpg": "/static/media/vde-min.b6523665cf94d964a787.jpg",
+    "static/media/biometrics-min.jpg": "/static/media/biometrics-min.57ee9a33e767eb6d6c37.jpg",
+    "static/media/intercom-min.jpg": "/static/media/intercom-min.f6fe13c05b45841e4ba5.jpg",
+    "static/media/logo.png": "/static/media/logo.2661e51eeb2b1d98d4a1.png",
+    "static/media/gate.jpg": "/static/media/gate.558f0c26caa02e2205be.jpg",
+    "static/media/inverter.jpg": "/static/media/inverter.f782621e8f9d9d155ece.jpg",
+    "index.html": "/index.html",
+    "main.0adac910.css.map": "/static/css/main.0adac910.css.map",
+    "main.10dbf3e1.js.map": "/static/js/main.10dbf3e1.js.map",
+    "453.b04a79c5.chunk.js.map": "/static/js/453.b04a79c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0adac910.css",
-    "static/js/main.a34048dd.js"
+    "static/js/main.10dbf3e1.js"
   ]
 }
