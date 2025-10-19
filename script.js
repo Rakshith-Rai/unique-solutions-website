@@ -945,6 +945,93 @@
             lastTouchEnd = now;
         }, {passive: false});
         
+        // Add touch feedback animations
+        const touchElements = document.querySelectorAll('.service-card, .client-card, .partner-item, .contact-item, .feature-item');
+        touchElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+                this.style.transition = 'transform 0.1s ease';
+            }, {passive: true});
+            
+            element.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, {passive: true});
+        });
+        
+        // Smooth scroll behavior for mobile
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 70;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Optimize images for mobile - lazy load with intersection observer
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px'
+        });
+        
+        // Observe all images
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+        
+        // Add visual feedback for button taps
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            }, {passive: true});
+            
+            button.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 100);
+            }, {passive: true});
+        });
+        
+        // Improve scroll performance
+        let ticking = false;
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+            
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // Update header on scroll
+                    if (lastScrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, {passive: true});
+        
         console.log('📱 Mobile optimizations applied');
     }
     
