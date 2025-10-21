@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unique Solutions - Website Under Maintenance">
+    <title>Under Maintenance | Unique Solutions</title>
+    <link rel="icon" type="image/png" href="src/assets/logo.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1960a2;
+            --secondary-color: #2563eb;
+            --accent-color: #60a5fa;
+            --dark-bg: #0f172a;
+            --light-text: #f1f5f9;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: var(--light-text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(96, 165, 250, 0.1);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+            animation-delay: 0s;
+            animation-duration: 25s;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 10%;
+            background: radial-gradient(circle, rgba(245, 87, 108, 0.15) 0%, transparent 70%);
+            animation-delay: 2s;
+            animation-duration: 30s;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, transparent 70%);
+            animation-delay: 4s;
+            animation-duration: 35s;
+        }
+
+        .bg-circle:nth-child(4) {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            right: 30%;
+            background: radial-gradient(circle, rgba(118, 75, 162, 0.15) 0%, transparent 70%);
+            animation-delay: 1s;
+            animation-duration: 20s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+            50% {
+                transform: translate(-30px, 50px) scale(0.9);
+            }
+            75% {
+                transform: translate(30px, 30px) scale(1.05);
+            }
+        }
+
+        /* Stars Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo-container {
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(96, 165, 250, 0.5));
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Main Icon */
+        .main-icon-wrapper {
+            position: relative;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .gear-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .gear {
+            position: absolute;
+            color: var(--accent-color);
+            animation: rotate 8s linear infinite;
+        }
+
+        .gear-1 {
+            font-size: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.6));
+        }
+
+        .gear-2 {
+            font-size: 60px;
+            top: 10px;
+            right: 10px;
+            animation-direction: reverse;
+            animation-duration: 6s;
+            color: #f5576c;
+            filter: drop-shadow(0 0 20px rgba(245, 87, 108, 0.6));
+        }
+
+        .gear-3 {
+            font-size: 50px;
+            bottom: 20px;
+            left: 20px;
+            animation-duration: 10s;
+            color: #667eea;
+            filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Tool Icons */
+        .tool-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tool-icon {
+            position: absolute;
+            font-size: 30px;
+            animation: orbit 15s linear infinite;
+        }
+
+        .tool-icon:nth-child(1) {
+            color: #60a5fa;
+            animation-delay: 0s;
+        }
+
+        .tool-icon:nth-child(2) {
+            color: #f093fb;
+            animation-delay: 5s;
+        }
+
+        .tool-icon:nth-child(3) {
+            color: #4facfe;
+            animation-delay: 10s;
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(120px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(120px) rotate(-360deg);
+            }
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #60a5fa, #f093fb, #4facfe);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--light-text);
+            opacity: 0.9;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: var(--light-text);
+            opacity: 0.8;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin: 50px 0;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            max-width: 500px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+            background-size: 200% 100%;
+            border-radius: 10px;
+            animation: progressLoad 3s ease-in-out infinite, gradientMove 3s linear infinite;
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+        }
+
+        @keyframes progressLoad {
+            0%, 100% {
+                width: 20%;
+            }
+            50% {
+                width: 80%;
+            }
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(96, 165, 250, 0.3);
+            border-color: rgba(96, 165, 250, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #60a5fa, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin: 50px 0;
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 20px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--light-text);
+        }
+
+        .contact-item:hover {
+            background: rgba(96, 165, 250, 0.2);
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        /* Social Links */
+        .social-links {
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out 1.8s both;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: transparent;
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .gear-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .gear-1 {
+                font-size: 70px;
+            }
+
+            .gear-2 {
+                font-size: 40px;
+            }
+
+            .gear-3 {
+                font-size: 35px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                max-width: 100%;
+            }
+
+            .contact-item {
+                margin: 10px 5px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .bg-circle {
+                width: 150px !important;
+                height: 150px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="src/assets/logo.png" alt="Unique Solutions" class="logo">
+        </div>
+
+        <!-- Main Icon -->
+        <div class="main-icon-wrapper">
+            <div class="gear-container">
+                <i class="fas fa-cog gear gear-1"></i>
+                <i class="fas fa-cog gear gear-2"></i>
+                <i class="fas fa-cog gear gear-3"></i>
+                
+                <div class="tool-icons">
+                    <i class="fas fa-wrench tool-icon"></i>
+                    <i class="fas fa-hammer tool-icon"></i>
+                    <i class="fas fa-tools tool-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>We're Under Maintenance</h1>
+            <h2>🚀 Something Amazing is Coming!</h2>
+            <p class="description">
+                We're currently performing scheduled maintenance to improve our services and bring you an even better experience. 
+                Our team is working hard to upgrade our systems with the latest technology and features.
+            </p>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-label">Upgrading Systems...</div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="feature-title">Faster Performance</div>
+                    <div class="feature-desc">Enhanced speed and reliability</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-title">Better Security</div>
+                    <div class="feature-desc">Advanced protection measures</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <div class="feature-title">New Features</div>
+                    <div class="feature-desc">Exciting updates coming soon</div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <a href="tel:+917022524444" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 7022524444</span>
+                </a>
+                <a href="mailto:info@uniquesolutionsind.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@uniquesolutionsind.com</span>
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate random stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 100;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            createStars();
+        });
+
+        // Add parallax effect to background circles
+        document.addEventListener('mousemove', (e) => {
+            const circles = document.querySelectorAll('.bg-circle');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            circles.forEach((circle, index) => {
+                const speed = (index + 1) * 20;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                circle.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
