@@ -3,677 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unique Solutions - Website Under Maintenance">
-    <title>Under Maintenance | Unique Solutions</title>
-    <link rel="icon" type="image/png" href="src/assets/logo.png">
+    <meta name="description" content="Unique Solutions - Connect, Secure, Automate: Your Trusted Partner in Technology">
+    <meta name="theme-color" content="#1960a2">
+    <title>Unique Solutions - Technology Solutions & Services</title>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="src/assets/favicon-logo.png">
+    <link rel="apple-touch-icon" href="src/assets/favicon-logo.png">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- Critical CSS - Bootstrap (minified) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Deferred CSS - Non-critical -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
+    
+    <!-- Inline critical CSS for instant rendering -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #1960a2;
-            --secondary-color: #2563eb;
-            --accent-color: #60a5fa;
-            --dark-bg: #0f172a;
-            --light-text: #f1f5f9;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            color: var(--light-text);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(96, 165, 250, 0.1);
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .bg-circle:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 10%;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
-            animation-delay: 0s;
-            animation-duration: 25s;
-        }
-
-        .bg-circle:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            top: 60%;
-            right: 10%;
-            background: radial-gradient(circle, rgba(245, 87, 108, 0.15) 0%, transparent 70%);
-            animation-delay: 2s;
-            animation-duration: 30s;
-        }
-
-        .bg-circle:nth-child(3) {
-            width: 250px;
-            height: 250px;
-            bottom: 10%;
-            left: 50%;
-            background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, transparent 70%);
-            animation-delay: 4s;
-            animation-duration: 35s;
-        }
-
-        .bg-circle:nth-child(4) {
-            width: 150px;
-            height: 150px;
-            top: 30%;
-            right: 30%;
-            background: radial-gradient(circle, rgba(118, 75, 162, 0.15) 0%, transparent 70%);
-            animation-delay: 1s;
-            animation-duration: 20s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(50px, -50px) scale(1.1);
-            }
-            50% {
-                transform: translate(-30px, 50px) scale(0.9);
-            }
-            75% {
-                transform: translate(30px, 30px) scale(1.05);
-            }
-        }
-
-        /* Stars Background */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-
-        /* Main Container */
-        .container {
-            position: relative;
-            z-index: 10;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Logo */
-        .logo-container {
-            margin-bottom: 40px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .logo {
-            width: 150px;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(96, 165, 250, 0.5));
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        /* Main Icon */
-        .main-icon-wrapper {
-            position: relative;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        .gear-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
-
-        .gear {
-            position: absolute;
-            color: var(--accent-color);
-            animation: rotate 8s linear infinite;
-        }
-
-        .gear-1 {
-            font-size: 100px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.6));
-        }
-
-        .gear-2 {
-            font-size: 60px;
-            top: 10px;
-            right: 10px;
-            animation-direction: reverse;
-            animation-duration: 6s;
-            color: #f5576c;
-            filter: drop-shadow(0 0 20px rgba(245, 87, 108, 0.6));
-        }
-
-        .gear-3 {
-            font-size: 50px;
-            bottom: 20px;
-            left: 20px;
-            animation-duration: 10s;
-            color: #667eea;
-            filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Tool Icons */
-        .tool-icons {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .tool-icon {
-            position: absolute;
-            font-size: 30px;
-            animation: orbit 15s linear infinite;
-        }
-
-        .tool-icon:nth-child(1) {
-            color: #60a5fa;
-            animation-delay: 0s;
-        }
-
-        .tool-icon:nth-child(2) {
-            color: #f093fb;
-            animation-delay: 5s;
-        }
-
-        .tool-icon:nth-child(3) {
-            color: #4facfe;
-            animation-delay: 10s;
-        }
-
-        @keyframes orbit {
-            0% {
-                transform: rotate(0deg) translateX(120px) rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg) translateX(120px) rotate(-360deg);
-            }
-        }
-
-        /* Content */
-        .content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #60a5fa, #f093fb, #4facfe);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 5s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            color: var(--light-text);
-            opacity: 0.9;
-        }
-
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            color: var(--light-text);
-            opacity: 0.8;
-        }
-
-        /* Progress Bar */
-        .progress-container {
-            margin: 50px 0;
-            animation: fadeInUp 1s ease-out 0.9s both;
-        }
-
-        .progress-label {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            max-width: 500px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
-            background-size: 200% 100%;
-            border-radius: 10px;
-            animation: progressLoad 3s ease-in-out infinite, gradientMove 3s linear infinite;
-            box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
-        }
-
-        @keyframes progressLoad {
-            0%, 100% {
-                width: 20%;
-            }
-            50% {
-                width: 80%;
-            }
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 200% 50%;
-            }
-        }
-
-        /* Features */
-        .features {
-            display: flex;
-            gap: 30px;
-            margin: 50px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-            animation: fadeInUp 1s ease-out 1.2s both;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex: 1;
-            min-width: 200px;
-            max-width: 250px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(96, 165, 250, 0.3);
-            border-color: rgba(96, 165, 250, 0.5);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #60a5fa, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .feature-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .feature-desc {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            line-height: 1.6;
-        }
-
-        /* Contact Info */
-        .contact-info {
-            margin: 50px 0;
-            animation: fadeInUp 1s ease-out 1.5s both;
-        }
-
-        .contact-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 20px;
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--light-text);
-        }
-
-        .contact-item:hover {
-            background: rgba(96, 165, 250, 0.2);
-            border-color: var(--accent-color);
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
-        }
-
-        .contact-item i {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-
-        /* Social Links */
-        .social-links {
-            margin-top: 40px;
-            animation: fadeInUp 1s ease-out 1.8s both;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            margin: 0 10px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--light-text);
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .social-link:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-color: transparent;
-            transform: translateY(-5px) rotate(360deg);
-            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.4);
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            .description {
-                font-size: 1rem;
-            }
-
-            .gear-container {
-                width: 150px;
-                height: 150px;
-            }
-
-            .gear-1 {
-                font-size: 70px;
-            }
-
-            .gear-2 {
-                font-size: 40px;
-            }
-
-            .gear-3 {
-                font-size: 35px;
-            }
-
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature-card {
-                max-width: 100%;
-            }
-
-            .contact-item {
-                margin: 10px 5px;
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-
-            .bg-circle {
-                width: 150px !important;
-                height: 150px !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            .logo {
-                width: 100px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-            }
-        }
+        /* Critical CSS for first paint */
+        body{margin:0;font-family:system-ui,-apple-system,sans-serif;overflow-x:hidden}
+        .loader-wrapper{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;display:flex;justify-content:center;align-items:center;z-index:9999}
+        .header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.95);box-shadow:0 2px 10px rgba(0,0,0,.1)}
+        .hero{min-height:100vh;position:relative}
     </style>
 </head>
 <body>
-    <!-- Stars Background -->
-    <div class="stars" id="stars"></div>
-
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
-        <div class="bg-circle"></div>
+    <!-- Technology Loader -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader">
+            <!-- Technology Animation -->
+            <div class="loader-animation">
+                <div class="tech-container">
+                    <!-- Circuit Board Pattern -->
+                    <div class="circuit-board">
+                        <div class="circuit-line line1"></div>
+                        <div class="circuit-line line2"></div>
+                        <div class="circuit-line line3"></div>
+                        <div class="circuit-line line4"></div>
+                        <div class="circuit-node node1"></div>
+                        <div class="circuit-node node2"></div>
+                        <div class="circuit-node node3"></div>
+                        <div class="circuit-node node4"></div>
+                        <div class="circuit-node node5"></div>
+                    </div>
+                    <!-- Central Server/Tech Icon -->
+                    <div class="tech-icon">
+                        <div class="server-stack">
+                            <div class="server-layer"></div>
+                            <div class="server-layer"></div>
+                            <div class="server-layer"></div>
+                        </div>
+                        <div class="tech-pulse"></div>
+                    </div>
+                    <!-- Data Flow Particles -->
+                    <div class="data-flow">
+                        <div class="data-particle particle1"></div>
+                        <div class="data-particle particle2"></div>
+                        <div class="data-particle particle3"></div>
+                        <div class="data-particle particle4"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Animated Text -->
+            <div class="loader-brand">Unique Solutions</div>
+            <div class="loader-tagline">Connect • Secure • Automate</div>
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill"></div>
+                <div class="progress-text">Loading<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+            </div>
+        </div>
     </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="src/assets/logo.png" alt="Unique Solutions" class="logo">
-        </div>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
 
-        <!-- Main Icon -->
-        <div class="main-icon-wrapper">
-            <div class="gear-container">
-                <i class="fas fa-cog gear gear-1"></i>
-                <i class="fas fa-cog gear gear-2"></i>
-                <i class="fas fa-cog gear gear-3"></i>
-                
-                <div class="tool-icons">
-                    <i class="fas fa-wrench tool-icon"></i>
-                    <i class="fas fa-hammer tool-icon"></i>
-                    <i class="fas fa-tools tool-icon"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Content -->
-        <div class="content">
-            <h1>We're Under Maintenance</h1>
-            <h2>🚀 Something Amazing is Coming!</h2>
-            <p class="description">
-                We're currently performing scheduled maintenance to improve our services and bring you an even better experience. 
-                Our team is working hard to upgrade our systems with the latest technology and features.
-            </p>
-
-            <!-- Progress Bar -->
-            <div class="progress-container">
-                <div class="progress-label">Upgrading Systems...</div>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-            </div>
-
-            <!-- Features -->
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="feature-title">Faster Performance</div>
-                    <div class="feature-desc">Enhanced speed and reliability</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="feature-title">Better Security</div>
-                    <div class="feature-desc">Advanced protection measures</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-sparkles"></i>
-                    </div>
-                    <div class="feature-title">New Features</div>
-                    <div class="feature-desc">Exciting updates coming soon</div>
-                </div>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <a href="tel:+917022524444" class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 7022524444</span>
+    <!-- Header -->
+    <header id="header" class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <img src="src/assets/logo.png" alt="Unique Solutions Logo" class="logo" width="50" height="50">
                 </a>
-                <a href="mailto:info@uniquesolutionsind.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>info@uniquesolutionsind.com</span>
-                </a>
-<<<<<<< Updated upstream
-=======
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -689,9 +122,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.html">Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#clients">Clients</a>
@@ -760,7 +190,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
                     <div class="about-image-wrapper">
-                        <img src="src/assets/about-im.png" alt="About Unique Solutions" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
+                        <img src="src/assets/about-im.jpg" alt="About Unique Solutions" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
                         <div class="image-overlay">
                             <h3>Best Technology Partners</h3>
                         </div>
@@ -1518,13 +948,7 @@
                     
                     <div class="partner-slide">
                         <div class="partner-item">
-                            <img src="src/assets/partner/tp-link.png" alt="TP-Link" class="img-fluid" loading="lazy" width="120" height="80">
-                        </div>
-                    </div>
-                    
-                    <div class="partner-slide">
-                        <div class="partner-item">
-                            <img src="src/assets/partner/D-Link-Logo.png" alt="D-Link" class="img-fluid" loading="lazy" width="120" height="80">
+                            <img src="src/assets/partner/tp link.png" alt="TP-Link" class="img-fluid" loading="lazy" width="120" height="80">
                         </div>
                     </div>
                 </div>
@@ -1637,62 +1061,515 @@
                         </div>
                     </div>
                 </div>
->>>>>>> Stashed changes
             </div>
 
-            <!-- Social Links -->
-            <div class="social-links">
-                <a href="#" class="social-link" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+            <!-- Google Map -->
+            <div class="row mt-5" data-aos="fade-up">
+                <div class="col-12">
+                    <div class="map-container">
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                            <h3 class="mb-0">Find Us Here</h3>
+                            <a href="https://www.google.com/maps/dir//GROUND+FLOOR,+Embasy+Plaza,+opp.+Indian+Bank,+Pumpwell,+Mangaluru,+Karnataka+575002/@12.8694688,74.7832511,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba35a5187ca0dbb:0xe0e7acc79e406cfa!2m2!1d74.865653!2d12.8694817?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-directions me-2"></i>Get Directions
+                            </a>
+                        </div>
+                        <div class="map-wrapper">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.739863840472!2d74.86307307507598!3d12.869481787435802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35a5187ca0dbb%3A0xe0e7acc79e406cfa!2sGROUND%20FLOOR%2C%20Embasy%20Plaza%2C%20opp.%20Indian%20Bank%2C%20Pumpwell%2C%20Mangaluru%2C%20Karnataka%20575002!5e0!3m2!1sen!2sin!4v1729367000000!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-logo mb-3">
+                        <img src="src/assets/logo.png" alt="Unique Solutions Logo" class="img-fluid" loading="lazy" width="150" height="auto" style="max-width: 150px;">
+                    </div>
+                    <p>Connect, Secure, Automate: Your Trusted Partner in Technology.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-3">Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#services">Laptops & Desktops</a></li>
+                        <li><a href="#services">Server Solutions</a></li>
+                        <li><a href="#services">Printers & Scanners</a></li>
+                        <li><a href="#services">CCTV Surveillance</a></li>
+                        <li><a href="#services">Networking Solutions</a></li>
+                        <li><a href="#services">And More...</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-3">Contact Info</h5>
+                    <ul class="list-unstyled contact-info-footer">
+                        <li>
+                            <i class="fas fa-phone me-2"></i>
+                            <a href="tel:+917022524444" class="text-light text-decoration-none">+91 7022524444</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@uniquesolutionsind.com" class="text-light text-decoration-none">info@uniquesolutionsind.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <a href="https://maps.app.goo.gl/g2nCR21drENaUJHy6" target="_blank" class="text-light text-decoration-none">GROUND FLOOR, Embassy Plaza, opp. Indian Bank, Pumpwell, Mangaluru, Karnataka 575002</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 bg-light">
+
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <span id="currentYear"></span> Unique Solutions. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Service Modals -->
+    <!-- CCTV Modal -->
+    <div class="modal fade" id="cctvModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-video me-2"></i>CCTV Surveillance Systems</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/cctv-min.jpg" alt="CCTV" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Protect your property with our state-of-the-art CCTV surveillance systems. We offer comprehensive security solutions including:</p>
+                    <ul>
+                        <li>High-definition IP cameras</li>
+                        <li>Night vision capabilities</li>
+                        <li>Remote monitoring via mobile apps</li>
+                        <li>Motion detection alerts</li>
+                        <li>Cloud storage options</li>
+                        <li>Professional installation and maintenance</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        // Generate random stars
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const numberOfStars = 100;
+    <!-- Biometric Modal -->
+    <div class="modal fade" id="biometricModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-fingerprint me-2"></i>Biometric Attendance Systems</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/biometrics-min.jpg" alt="Biometric" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Streamline your attendance management with our advanced biometric systems featuring:</p>
+                    <ul>
+                        <li>Fingerprint recognition</li>
+                        <li>Facial recognition technology</li>
+                        <li>Real-time attendance tracking</li>
+                        <li>Automated reporting</li>
+                        <li>Integration with payroll systems</li>
+                        <li>Multi-location support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                star.style.opacity = Math.random() * 0.7 + 0.3;
-                starsContainer.appendChild(star);
-            }
-        }
+    <!-- Intercom Modal -->
+    <div class="modal fade" id="intercomModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-phone me-2"></i>EPABX & Intercom Systems</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/intercom-min.jpg" alt="Intercom" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Enhance your communication infrastructure with our professional systems:</p>
+                    <ul>
+                        <li>Internal extension networks</li>
+                        <li>Auto-attendant features</li>
+                        <li>Call forwarding and routing</li>
+                        <li>Voicemail systems</li>
+                        <li>Conference calling capabilities</li>
+                        <li>Scalable solutions for businesses of all sizes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        // Initialize on load
-        window.addEventListener('load', () => {
-            createStars();
-        });
+    <!-- Solar Modal -->
+    <div class="modal fade" id="solarModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-sun me-2"></i>Solar Power Systems</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/solar-min.jpg" alt="Solar" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Go green with our sustainable solar energy solutions:</p>
+                    <ul>
+                        <li>Residential and commercial installations</li>
+                        <li>High-efficiency solar panels</li>
+                        <li>Grid-tied and off-grid systems</li>
+                        <li>Battery storage solutions</li>
+                        <li>Energy monitoring systems</li>
+                        <li>Government subsidy assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        // Add parallax effect to background circles
-        document.addEventListener('mousemove', (e) => {
-            const circles = document.querySelectorAll('.bg-circle');
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
+    <!-- VDE Modal -->
+    <div class="modal fade" id="vdeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-door-open me-2"></i>Video Door Entry Systems</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/Video door entry system.jpg" alt="VDE" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Secure your entry points with our smart video door entry systems:</p>
+                    <ul>
+                        <li>HD video monitoring</li>
+                        <li>Two-way audio communication</li>
+                        <li>Remote door unlocking</li>
+                        <li>Visitor recording and logging</li>
+                        <li>Night vision capabilities</li>
+                        <li>Smartphone integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            circles.forEach((circle, index) => {
-                const speed = (index + 1) * 20;
-                const x = (mouseX - 0.5) * speed;
-                const y = (mouseY - 0.5) * speed;
-                circle.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
-    </script>
+    <!-- Automation Modal -->
+    <div class="modal fade" id="automationModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-home me-2"></i>Gate/Home Automation</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/gate automations.jpg" alt="Automation" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Experience convenience with our intelligent automation solutions:</p>
+                    <ul>
+                        <li>Automated gate systems</li>
+                        <li>Smart lighting control</li>
+                        <li>Climate control automation</li>
+                        <li>Voice-activated controls</li>
+                        <li>Scheduled operations</li>
+                        <li>Integration with smart home ecosystems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fire Alarm Modal -->
+    <div class="modal fade" id="fireAlarmModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-fire-extinguisher me-2"></i>Fire Alarm Systems</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/Fire-Alarm-System.jpg" alt="Fire Alarm System" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Comprehensive fire safety solutions for complete protection:</p>
+                    <ul>
+                        <li>Smoke and heat detectors</li>
+                        <li>Manual call points</li>
+                        <li>Automatic fire alarm panels</li>
+                        <li>Addressable fire alarm systems</li>
+                        <li>Fire suppression integration</li>
+                        <li>24/7 monitoring capabilities</li>
+                        <li>Emergency notification systems</li>
+                        <li>Regular maintenance and testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Signage Modal -->
+    <!-- Digital Signage & Kiosks Modal -->
+    <div class="modal fade" id="digitalSignageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-tv me-2"></i>Digital Signage & Kiosk Solutions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/digital signage and qiosk.jpeg" alt="Digital Signage and Kiosks" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Engage your audience with dynamic digital displays and interactive kiosk solutions:</p>
+                    <ul>
+                        <li>Indoor and outdoor digital display screens</li>
+                        <li>Interactive self-service kiosks</li>
+                        <li>Content management systems</li>
+                        <li>Interactive touchscreen displays</li>
+                        <li>Video wall solutions</li>
+                        <li>Information and wayfinding kiosks</li>
+                        <li>Cloud-based content scheduling</li>
+                        <li>Real-time content updates</li>
+                        <li>Multi-location management</li>
+                        <li>Payment and ticketing kiosks</li>
+                        <li>Custom content design services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printer Modal -->
+    <div class="modal fade" id="printerModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-print me-2"></i>Printer Solutions</h5>
+                    <button type="type" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/printer.jpg" alt="Printer" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Complete printing solutions for your business needs:</p>
+                    <ul>
+                        <li>Printer sales and installation</li>
+                        <li>Rental and leasing options</li>
+                        <li>Maintenance and repair services</li>
+                        <li>Consumables supply</li>
+                        <li>Network printer setup</li>
+                        <li>Multi-function devices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPS Modal -->
+    <div class="modal fade" id="upsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-battery-full me-2"></i>Online UPS Solutions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/online ups.jpeg" alt="Online UPS" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Ensure uninterrupted power supply with our reliable online UPS solutions:</p>
+                    <ul>
+                        <li>True online double conversion technology</li>
+                        <li>Zero transfer time protection</li>
+                        <li>Wide input voltage range</li>
+                        <li>Surge and spike protection</li>
+                        <li>Scalable battery backup</li>
+                        <li>Remote monitoring and management</li>
+                        <li>Industrial and commercial grade systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Server Modal -->
+    <div class="modal fade" id="serverModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-server me-2"></i>Server Solutions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/server.png" alt="Server" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Enterprise-grade server infrastructure for your business needs:</p>
+                    <ul>
+                        <li>Rack and tower servers</li>
+                        <li>Virtualization solutions</li>
+                        <li>Cloud and hybrid infrastructure</li>
+                        <li>Storage solutions (NAS/SAN)</li>
+                        <li>Server configuration and deployment</li>
+                        <li>24/7 monitoring and support</li>
+                        <li>Disaster recovery planning</li>
+                        <li>Server migration services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Laptop Modal -->
+    <div class="modal fade" id="laptopModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-laptop me-2"></i>Laptops & Desktops</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/Laptops and desktops.jpeg" alt="Laptops and Desktops" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Quality computers and workstations for all your computing needs:</p>
+                    <ul>
+                        <li>Business laptops and ultrabooks</li>
+                        <li>High-performance desktops</li>
+                        <li>Custom-built workstations</li>
+                        <li>Gaming PCs and laptops</li>
+                        <li>Bulk procurement for organizations</li>
+                        <li>Hardware upgrades and repairs</li>
+                        <li>Data migration and setup</li>
+                        <li>Extended warranty options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Conferencing Modal -->
+    <div class="modal fade" id="videoConfModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-video me-2"></i>Video Conferencing Solutions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3">
+                            <img src="src/assets/video conferencing.webp" alt="Video Conferencing" class="img-fluid rounded" loading="lazy" width="100%" height="auto">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <img src="src/assets/video conferencing 2.jpg" alt="Video Conferencing Setup" class="img-fluid rounded" loading="lazy" width="100%" height="auto">
+                        </div>
+                    </div>
+                    <p>Transform your communication with our professional video conferencing solutions designed for modern businesses:</p>
+                    <ul>
+                        <li>High-definition video and crystal-clear audio</li>
+                        <li>Multi-participant conferencing support</li>
+                        <li>Screen sharing and collaboration tools</li>
+                        <li>Cloud-based and on-premise solutions</li>
+                        <li>Integration with existing systems</li>
+                        <li>Recording and playback capabilities</li>
+                        <li>Mobile and desktop compatibility</li>
+                        <li>Secure encrypted connections</li>
+                        <li>24/7 technical support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Panel Modal -->
+    <div class="modal fade" id="interactivePanelModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-chalkboard me-2"></i>Interactive Display Panels</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/Interactive panel.jpg" alt="Interactive Panel" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Enhance collaboration and engagement with our advanced interactive display panels:</p>
+                    <ul>
+                        <li>Touch-enabled large format displays</li>
+                        <li>4K ultra-high-definition resolution</li>
+                        <li>Multi-touch gesture support (up to 20 points)</li>
+                        <li>Built-in whiteboarding and annotation tools</li>
+                        <li>Wireless screen mirroring capabilities</li>
+                        <li>Compatible with Windows, Mac, Android, iOS</li>
+                        <li>Integrated audio system</li>
+                        <li>Perfect for classrooms, boardrooms, and training centers</li>
+                        <li>Cloud storage integration</li>
+                        <li>Remote management and updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Networking Modal -->
+    <div class="modal fade" id="networkingModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-network-wired me-2"></i>Networking Solutions</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="src/assets/networking.png" alt="Networking Solutions" class="img-fluid mb-3 rounded" loading="lazy" width="600" height="300">
+                    <p>Comprehensive networking solutions to keep your business connected, secure, and efficient:</p>
+                    <ul>
+                        <li>Network design and implementation</li>
+                        <li>Enterprise-grade firewalls and security appliances</li>
+                        <li>Routers and switches configuration</li>
+                        <li>Wireless access points and Wi-Fi solutions</li>
+                        <li>VPN (Virtual Private Network) setup</li>
+                        <li>Network security audits and monitoring</li>
+                        <li>LAN/WAN infrastructure setup</li>
+                        <li>Network troubleshooting and maintenance</li>
+                        <li>Bandwidth management and optimization</li>
+                        <li>Cisco, Fortinet, and other leading brands</li>
+                        <li>24/7 network monitoring and support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with defer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+    
+    <!-- AOS Animation JS with defer -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
+    <!-- Custom JS with defer -->
+    <script src="script.js" defer></script>
 </body>
 </html>
+
