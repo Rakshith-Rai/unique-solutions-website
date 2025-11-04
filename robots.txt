@@ -1,0 +1,21 @@
+# Robots.txt for Unique Solutions
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://uniquesolutionsind.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Allow indexing of important pages
+Allow: /index.html
+Allow: /products.html
+Allow: /maintenance.html
+
+# Allow crawling of assets
+Allow: /src/
+Allow: /style.css
+Allow: /script.js
